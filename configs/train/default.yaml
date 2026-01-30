@@ -1,0 +1,29 @@
+# @package train
+_target_: src.train.trainer.Trainer
+
+# Training parameters
+max_epochs: 100
+learning_rate: 1e-3
+weight_decay: 1e-4
+scheduler: "cosine"  # cosine, step, plateau
+
+# Optimization
+optimizer: "adam"  # adam, sgd, adamw
+momentum: 0.9
+beta1: 0.9
+beta2: 0.999
+
+# Loss weights
+reprojection_loss_weight: 1.0
+triangulation_loss_weight: 0.1
+regularization_loss_weight: 0.01
+
+# Checkpointing
+save_every_n_epochs: 10
+save_top_k: 3
+monitor_metric: "val_chamfer_distance"
+monitor_mode: "min"
+
+# Early stopping
+patience: 20
+min_delta: 1e-4

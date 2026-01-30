@@ -1,0 +1,38 @@
+# @package _global_
+defaults:
+  - _self_
+  - override /model: sfm_basic
+  - override /data: synthetic
+  - override /train: default
+
+# Project configuration
+project_name: "multi_view_3d_reconstruction"
+experiment_name: "sfm_experiment"
+seed: 42
+
+# Device configuration
+device: "auto"  # auto, cuda, mps, cpu
+mixed_precision: true
+gradient_accumulation_steps: 1
+
+# Paths
+data_dir: "data"
+checkpoint_dir: "checkpoints"
+log_dir: "logs"
+assets_dir: "assets"
+
+# Logging
+log_level: "INFO"
+use_wandb: false
+wandb_project: "multi-view-3d-reconstruction"
+
+# Evaluation
+eval_metrics:
+  - chamfer_distance
+  - psnr
+  - ssim
+  - point_cloud_accuracy
+
+# Visualization
+save_visualizations: true
+max_visualization_points: 10000

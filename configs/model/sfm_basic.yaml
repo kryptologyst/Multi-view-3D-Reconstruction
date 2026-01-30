@@ -1,0 +1,19 @@
+# @package model
+_target_: src.models.sfm_basic.SfMBasicModel
+
+# Model parameters
+feature_detector: "sift"  # sift, orb, surf
+matcher: "bf"  # bf, flann
+min_matches: 50
+ransac_threshold: 1.0
+confidence: 0.99
+
+# Camera parameters
+focal_length: 1000.0
+principal_point: [320.0, 240.0]
+image_size: [640, 480]
+
+# Reconstruction parameters
+triangulation_method: "direct_linear_transform"
+min_triangulation_angle: 1.0  # degrees
+max_reprojection_error: 1.0

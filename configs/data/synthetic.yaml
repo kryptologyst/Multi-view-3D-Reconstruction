@@ -1,0 +1,24 @@
+# @package data
+_target_: src.data.synthetic_dataset.SyntheticMultiViewDataset
+
+# Dataset parameters
+num_images: 8
+image_size: [640, 480]
+noise_level: 0.01
+blur_sigma: 0.5
+
+# Camera trajectory
+camera_radius: 2.0
+camera_height: 1.0
+look_at_center: [0.0, 0.0, 0.0]
+
+# Scene parameters
+num_objects: 5
+object_scale_range: [0.5, 2.0]
+object_position_range: [-1.0, 1.0]
+
+# Data loading
+batch_size: 1
+num_workers: 4
+pin_memory: true
+shuffle: false
